@@ -2,55 +2,52 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Videos — Dendrite Creative Studio</title>
+<title>Dendrite Creative Studio — Videos</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css">
-<script src="videos.js" defer></script>
+<link rel="stylesheet" href="./style.css">
 </head>
 <body>
 
 <nav class="nav">
   <div class="nav-container">
     <div class="logo-wrap">
-      <a href="index.html"><img src="image/logo.png" alt="Logo"></a>
+      <a href="./index.html"><img src="./image/logo.png" alt="Logo"></a>
       <span class="logo-text">DENDRITE CREATIVE STUDIO</span>
     </div>
     <div class="nav-links">
-      <a href="index.html">Home</a>
+      <a href="./index.html">Home</a>
       <div class="dropdown">
         <span class="nav-label">Works</span>
         <div class="dropdown-content">
-          <a href="videos.html">Videos</a>
-          <a href="images.html">Images</a>
+          <a href="./videos.html">Videos</a>
+          <a href="./images.html">Images</a>
         </div>
       </div>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
+      <a href="./about.html">About</a>
+      <a href="./contact.html">Contact</a>
     </div>
   </div>
 </nav>
 
 <main class="page-content">
-  <section class="video-gallery">
-    <!-- Vimeo video cards -->
-    <div class="video-card" data-vimeo="1162879248"></div>
-    <div class="video-card" data-vimeo="1155288512"></div>
-    <div class="video-card" data-vimeo="1155279695"></div>
-    <div class="video-card" data-vimeo="1155277268"></div>
-    <div class="video-card" data-vimeo="1155275625"></div>
-    <div class="video-card" data-vimeo="1155274132"></div>
-    
-    <div class="video-card" data-vimeo="1155288512"></div>
-    <div class="video-card" data-vimeo="1155279695"></div>
-    <div class="video-card" data-vimeo="1155277268"></div>
-    <div class="video-card" data-vimeo="1155275625"></div>
-  </section>
-</main>
 
-<!-- FULLSCREEN VIDEO LIGHTBOX -->
-<div class="video-lightbox" id="videoLightbox">
-  <iframe src="" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-</div>
+  <h2>Videos</h2>
+
+  <div class="video-grid">
+
+    <div class="video-card">
+      <iframe src="https://player.vimeo.com/video/VIDEO_ID_1"
+        allow="autoplay; fullscreen" allowfullscreen></iframe>
+    </div>
+
+    <div class="video-card">
+      <iframe src="https://player.vimeo.com/video/VIDEO_ID_2"
+        allow="autoplay; fullscreen" allowfullscreen></iframe>
+    </div>
+
+  </div>
+
+</main>
 
 <footer>
   © 2026 Dendrite Creative Studio
