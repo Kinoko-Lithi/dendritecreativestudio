@@ -5,9 +5,18 @@
 <title>Dendrite Creative Studio — Home</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="./style.css">
-<script src="./script.js" defer></script>
 </head>
 <body>
+
+<div class="video-wrapper">
+  <iframe 
+    src="https://player.vimeo.com/video/YOUR_VIDEO_ID?background=1&autoplay=1&loop=1&muted=1"
+    frameborder="0"
+    allow="autoplay; fullscreen"
+    allowfullscreen>
+  </iframe>
+  <div class="video-fallback"></div>
+</div>
 
 <nav class="nav">
   <div class="nav-container">
@@ -30,21 +39,10 @@
   </div>
 </nav>
 
-<div class="video-wrapper">
-  <div class="video-fallback"></div>
-  <iframe src="https://player.vimeo.com/video/1167151626?background=1&autoplay=1&loop=1&muted=1&title=0&byline=0&portrait=0"
-          frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-</div>
-
 <main class="home-content">
-  <section class="hero-section">
-    <div class="services-text" id="services-text">
-      <p>Graphic Design</p>
-      <p>Web Design | Web Development</p>
-      <p>Video Art | Motion Graphics</p>
-      <p>Live Stage Visuals</p>
-      <p>Music & Sound Design</p>
-    </div>
+  <section class="hero">
+    <h1>DENDRITE</h1>
+    <p>Exploring memory, fragmentation and digital matter.</p>
   </section>
 </main>
 
