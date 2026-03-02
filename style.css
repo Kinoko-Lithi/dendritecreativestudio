@@ -1,5 +1,5 @@
 /* ============================= */
-/* RESET & GLOBAL */
+/* RESET & GLOBAL STYLES */
 /* ============================= */
 * {
   margin: 0;
@@ -85,6 +85,7 @@ body {
   min-width: 150px;
   padding: 10px 0;
   box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  border-radius: 6px;
 }
 
 .dropdown-content a {
@@ -135,7 +136,7 @@ body {
 
 /* ============================= */
 /* HERO / HOME */
-.hero {
+.hero-section {
   max-width: 800px;
   margin: auto;
   text-align: center;
@@ -143,13 +144,9 @@ body {
   padding-top: 50px;
 }
 
-.hero h1 {
-  font-size: 48px;
-  margin-bottom: 20px;
-}
-
-.hero p {
+.hero-section p {
   font-size: 20px;
+  margin-bottom: 16px;
 }
 
 /* ============================= */
@@ -164,7 +161,7 @@ body {
 .video-card {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 16/9;
   border-radius: 12px;
   overflow: hidden;
   background: #000;
@@ -176,7 +173,6 @@ body {
   width: 100%;
   height: 100%;
   border: none;
-  display: block;
 }
 
 .video-card:hover {
@@ -210,6 +206,7 @@ body {
   align-items: center;
   gap: 60px;
   margin-top: 60px;
+  flex-wrap: wrap;
 }
 
 .about-image img {
@@ -222,14 +219,8 @@ body {
   max-width: 600px;
 }
 
-.about-text h2 {
-  margin-bottom: 25px;
-  font-size: 28px;
-}
-
 .about-text p {
   margin-bottom: 20px;
-  font-size: 16px;
 }
 
 /* ============================= */
@@ -257,7 +248,7 @@ body {
 
 .contact-item a {
   text-decoration: none;
-  color: #4B0082; /* dark purple */
+  color: #4B0082; /* dark purple links */
   transition: color 0.3s ease;
 }
 
