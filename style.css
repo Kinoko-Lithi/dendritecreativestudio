@@ -231,3 +231,46 @@ footer {
   }
 
 }
+/* ============================= */
+/* ABOUT PAGE */
+/* ============================= */
+
+.about-section {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  margin-top: 60px;
+}
+
+.about-image img {
+  width: 320px;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.about-text {
+  max-width: 600px;
+}
+
+.about-text h2 {
+  margin-bottom: 25px;
+  font-size: 28px;
+}
+
+.about-text p {
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+  .about-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-image img {
+    width: 240px;
+  }
+}
