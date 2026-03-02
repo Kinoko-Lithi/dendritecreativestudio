@@ -124,7 +124,7 @@ body {
 .video-fallback {
   position: absolute;
   inset: 0;
-  background: #f5f5f5;
+  background: #f0ead6; /* eggshell behind homepage video */
   z-index: -1;
 }
 
@@ -186,7 +186,7 @@ body {
 .lightbox {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.92);
+  background: rgba(240,234,214,0.95); /* eggshell overlay */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -224,6 +224,7 @@ body {
   aspect-ratio: 16 / 9;
   border-radius: 12px;
   overflow: hidden;
+  background: #f0ead6; /* eggshell background for cards */
   transform: rotate(var(--rotate, 0deg));
   transition: transform 0.4s ease, box-shadow 0.4s ease;
   cursor: pointer;
@@ -252,7 +253,7 @@ body {
 .video-lightbox {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.94);
+  background: rgba(240,234,214,0.95); /* eggshell overlay */
   display: flex;
   align-items: center;
   justify-content: center;
