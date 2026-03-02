@@ -1,61 +1,53 @@
-// SERVICES TEXT ANIMATION
-window.addEventListener("load", function () {
-  const container = document.getElementById("services-text");
-  if (!container) return;
-
-  const lines = container.querySelectorAll("p");
-
-  lines.forEach((line, index) => {
-    const text = line.textContent;
-    line.textContent = "";
-
-    text.split("").forEach((char, i) => {
-      const span = document.createElement("span");
-      span.textContent = char === " " ? "\u00A0" : char;
-      span.style.opacity = "0";
-      span.style.transform = "translateY(8px)";
-      span.style.display = "inline-block";
-      span.style.transition = "opacity 0.4s ease, transform 0.4s ease";
-
-      line.appendChild(span);
-
-      setTimeout(() => {
-        span.style.opacity = "1";
-        span.style.transform = "translateY(0)";
-      }, i * 40 + index * 250);
-    });
-  });
-});
-
-
-// LIGHTBOX FUNCTIONALITY
 document.addEventListener("DOMContentLoaded", function () {
 
-  const images = document.querySelectorAll(".image-grid img");
-  const lightbox = document.getElementById("lightbox");
+  const cards = document.querySelectorAll(".video-card");
+  const lightbox = document.getElementById("videoLightbox");
 
-  if (!lightbox) return;
+  if (!cards.length) return;
 
-  const lightboxImg = lightbox.querySelector("img");
+  const lightboxVideo = lightbox.querySelector("video");
 
-  images.forEach(img => {
-    img.addEventListener("click", function () {
+  // Random rotation for scattered artistic look
+  cards.forEach(card => {
+
+    const randomRotate = (Math.random() * 6 - 3) + "deg";
+    card.style.setProperty("--rotate", randomRotate);
+
+    const video = card.querySelector("video");
+
+    // Hover preview
+    card.addEventListener("mouseenter", () => {
+      video.play();
+    });
+
+    card.addEventListener("mouseleave", () => {
+      video.pause();
+      video.currentTime = 0;
+    });
+
+    // Click to fullscreen
+    card.addEventListener("click", () => {
       lightbox.classList.add("active");
-      lightboxImg.src = img.src;
+      lightboxVideo.src = video.src;
       document.body.style.overflow = "hidden";
     });
+
   });
 
-  // Close on background click
-  lightbox.addEventListener("click", function () {
+  // Close lightbox on click
+  lightbox.addEventListener("click", () => {
     lightbox.classList.remove("active");
+    lightboxVideo.pause();
+    lightboxVideo.src = "";
     document.body.style.overflow = "auto";
   });
 
-  // Close on ESC
-  document.addEventListener("keydown", function (e) {
+  // ESC closes
+  document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
       lightbox.classList.remove("active");
+      lightboxVideo.pause();
+      lightboxVideo.src = "";
       document.body.style.overflow = "auto";
     }
   });
