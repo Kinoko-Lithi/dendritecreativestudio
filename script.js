@@ -1,33 +1,25 @@
-document.addEventListener("DOMContentLoaded", function() {
-  const videos = document.querySelectorAll(".video-click-container");
-  const overlay = document.createElement("div");
-  overlay.className = "video-overlay";
-  overlay.innerHTML = `
-    <div class="video-overlay-content">
-      <iframe allow="autoplay; fullscreen" allowfullscreen></iframe>
-    </div>
-  `;
-  document.body.appendChild(overlay);
-  const iframe = overlay.querySelector("iframe");
+window.addEventListener("load", function() {
+  const container = document.getElementById("services-text");
+  if(!container) return;
 
-  // Open fullscreen on click
-  videos.forEach(video => {
-    video.addEventListener("click", function() {
-      iframe.src = this.dataset.src;
-      overlay.classList.add("active");
+  const lines = container.querySelectorAll("p");
+  lines.forEach((line, index) => {
+    const text = line.textContent;
+    line.textContent = "";
+
+    text.split("").forEach((char, i) => {
+      const span = document.createElement("span");
+      span.textContent = char === " " ? "\u00A0" : char;
+      span.style.opacity = "0";
+      span.style.transform = "translateY(8px)";
+      span.style.display = "inline-block";
+      span.style.transition = "opacity 0.4s ease, transform 0.4s ease";
+      line.appendChild(span);
+
+      setTimeout(() => {
+        span.style.opacity = "1";
+        span.style.transform = "translateY(0)";
+      }, i*40 + index*250);
     });
   });
-
-  // Close on overlay click
-  overlay.addEventListener("click", closeVideo);
-
-  // Close on ESC key
-  document.addEventListener("keydown", function(e) {
-    if (e.key === "Escape") closeVideo();
-  });
-
-  function closeVideo() {
-    overlay.classList.remove("active");
-    setTimeout(() => { iframe.src = ""; }, 400);
-  }
 });
