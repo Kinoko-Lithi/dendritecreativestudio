@@ -2,83 +2,68 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Videos — Dendrite Creative Studio</title>
+<title>Dendrite Creative Studio — Videos</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="./style.css">
+<script src="./script.js" defer></script>
 </head>
-
 <body>
 
 <nav class="nav">
   <div class="nav-container">
     <div class="logo-wrap">
-      <a href="index.html">
-        <img src="image/logo.png" alt="Logo">
+      <a href="./index.html">
+        <img src="./image/logo.png" alt="Dendrite Logo">
       </a>
       <span class="logo-text">DENDRITE CREATIVE STUDIO</span>
     </div>
+
     <div class="nav-links">
-      <a href="index.html">Home</a>
+      <a href="./index.html">Home</a>
       <div class="dropdown">
-        <a href="works.html">Works</a>
+        <span class="nav-label">Works</span>
         <div class="dropdown-content">
-          <a href="videos.html">Videos</a>
-          <a href="images.html">Images</a>
+          <a href="./videos.html">Videos</a>
+          <a href="./images.html">Images</a>
         </div>
       </div>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
+      <a href="./about.html">About</a>
+      <a href="./contact.html">Contact</a>
     </div>
   </div>
 </nav>
 
-<main>
-  <section class="quirky-video-grid">
-    <div class="video-item"><iframe src="https://player.vimeo.com/video/1155265233" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
-    <div class="video-item"><iframe src="https://player.vimeo.com/video/1155279695" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
-    <div class="video-item"><iframe src="https://player.vimeo.com/video/1155288512" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
-    <div class="video-item"><iframe src="https://player.vimeo.com/video/1155265233" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
-    <div class="video-item"><iframe src="https://player.vimeo.com/video/1155279695" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
-    <div class="video-item"><iframe src="https://player.vimeo.com/video/1155288512" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
-    <div class="video-item"><iframe src="https://player.vimeo.com/video/1155265233" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
-    <div class="video-item"><iframe src="https://player.vimeo.com/video/1155279695" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
-    <div class="video-item"><iframe src="https://player.vimeo.com/video/1155288512" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
+<main class="page-content">
+  <section class="video-gallery">
+
+    <!-- Replace src with your actual video files -->
+    <div class="video-card">
+      <video src="./videos/1.mp4" muted loop></video>
+    </div>
+
+    <div class="video-card">
+      <video src="./videos/2.mp4" muted loop></video>
+    </div>
+
+    <div class="video-card">
+      <video src="./videos/3.mp4" muted loop></video>
+    </div>
+
+    <div class="video-card">
+      <video src="./videos/4.mp4" muted loop></video>
+    </div>
+
   </section>
 </main>
 
-<!-- FULLSCREEN MODAL -->
-<div class="fullscreen-overlay" id="fullscreenOverlay">
-  <iframe id="fullscreenIframe" src="" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+<!-- Video Lightbox -->
+<div class="video-lightbox" id="videoLightbox">
+  <video controls autoplay></video>
 </div>
 
 <footer>
   © 2026 Dendrite Creative Studio
 </footer>
-
-<script>
-const videos = document.querySelectorAll('.video-item iframe');
-const overlay = document.getElementById('fullscreenOverlay');
-const fullscreenIframe = document.getElementById('fullscreenIframe');
-
-videos.forEach(v => {
-  v.addEventListener('click', () => {
-    fullscreenIframe.src = v.src + "?autoplay=1";
-    overlay.style.display = "flex";
-  });
-});
-
-overlay.addEventListener('click', () => {
-  overlay.style.display = "none";
-  fullscreenIframe.src = "";
-});
-
-document.addEventListener('keydown', e => {
-  if(e.key === "Escape"){
-    overlay.style.display = "none";
-    fullscreenIframe.src = "";
-  }
-});
-</script>
 
 </body>
 </html>
