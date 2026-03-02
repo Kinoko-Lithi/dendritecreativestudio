@@ -173,20 +173,13 @@ body {
 /* VIDEO PAGE */
 /* ============================= */
 
-.video-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 40px;
-  margin-top: 40px;
-}
-
 .video-card {
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 9;
   border-radius: 12px;
   overflow: hidden;
-  background: black;
+  background: #000;
   transform: rotate(var(--rotate, 0deg));
   transition: transform 0.3s ease;
 }
@@ -201,7 +194,6 @@ body {
 .video-card:hover {
   transform: rotate(0deg) scale(1.02);
 }
-
 /* ============================= */
 /* CONTACT + CARD LINKS */
 /* ============================= */
@@ -261,4 +253,5 @@ footer {
     font-size: 18px;
   }
 }
+
 
