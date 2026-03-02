@@ -1,6 +1,7 @@
-window.addEventListener("load", function() {
+// Animate services text on page load
+window.addEventListener("load", () => {
   const container = document.getElementById("services-text");
-  if(!container) return;
+  if (!container) return;
 
   const lines = container.querySelectorAll("p");
   lines.forEach((line, index) => {
@@ -19,62 +20,55 @@ window.addEventListener("load", function() {
       setTimeout(() => {
         span.style.opacity = "1";
         span.style.transform = "translateY(0)";
-      }, i*40 + index*250);
+      }, i * 40 + index * 250);
     });
   });
-});document.addEventListener("DOMContentLoaded", function () {
+});
 
+// Vimeo video gallery with lightbox
+document.addEventListener("DOMContentLoaded", () => {
   const cards = document.querySelectorAll(".video-card");
   const lightbox = document.getElementById("videoLightbox");
+  const lightboxIframe = lightbox.querySelector("iframe");
 
-  if (!cards.length) return;
+  if (!cards.length || !lightbox) return;
 
-  const lightboxVideo = lightbox.querySelector("video");
+  // Helper function to build Vimeo URL
+  const getVimeoURL = (id, autoplay = false) =>
+    `https://player.vimeo.com/video/${id}?autoplay=${autoplay ? 1 : 0}&loop=0&muted=0`;
 
-  // Random rotation for scattered artistic look
   cards.forEach(card => {
+    const videoId = card.dataset.vimeo;
 
-    const randomRotate = (Math.random() * 6 - 3) + "deg";
-    card.style.setProperty("--rotate", randomRotate);
+    // Create iframe inside card
+    const iframe = document.createElement("iframe");
+    iframe.src = getVimeoURL(videoId);
+    iframe.frameBorder = "0";
+    iframe.allow = "autoplay; fullscreen; picture-in-picture";
+    iframe.allowFullscreen = true;
+    card.appendChild(iframe);
 
-    const video = card.querySelector("video");
+    // Random rotation for scattered look
+    const rotateDeg = (Math.random() * 6 - 3) + "deg";
+    card.style.setProperty("--rotate", rotateDeg);
 
-    // Hover preview
-    card.addEventListener("mouseenter", () => {
-      video.play();
-    });
-
-    card.addEventListener("mouseleave", () => {
-      video.pause();
-      video.currentTime = 0;
-    });
-
-    // Click to fullscreen
+    // Click opens fullscreen lightbox
     card.addEventListener("click", () => {
       lightbox.classList.add("active");
-      lightboxVideo.src = video.src;
+      lightboxIframe.src = getVimeoURL(videoId, true);
       document.body.style.overflow = "hidden";
     });
-
   });
 
   // Close lightbox on click
-  lightbox.addEventListener("click", () => {
+  const closeLightbox = () => {
     lightbox.classList.remove("active");
-    lightboxVideo.pause();
-    lightboxVideo.src = "";
+    lightboxIframe.src = "";
     document.body.style.overflow = "auto";
-  });
+  };
 
-  // ESC closes
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
-      lightbox.classList.remove("active");
-      lightboxVideo.pause();
-      lightboxVideo.src = "";
-      document.body.style.overflow = "auto";
-    }
+  lightbox.addEventListener("click", closeLightbox);
+  document.addEventListener("keydown", e => {
+    if (e.key === "Escape") closeLightbox();
   });
-
 });
-
