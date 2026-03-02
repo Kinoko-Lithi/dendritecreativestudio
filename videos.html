@@ -2,63 +2,48 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Dendrite Creative Studio — Videos</title>
+<title>Videos — Dendrite Creative Studio</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="./style.css">
-<script src="./script.js" defer></script>
+<link rel="stylesheet" href="style.css">
+<script src="videos.js" defer></script>
 </head>
 <body>
 
 <nav class="nav">
   <div class="nav-container">
     <div class="logo-wrap">
-      <a href="./index.html">
-        <img src="./image/logo.png" alt="Dendrite Logo">
-      </a>
+      <a href="index.html"><img src="image/logo.png" alt="Logo"></a>
       <span class="logo-text">DENDRITE CREATIVE STUDIO</span>
     </div>
-
     <div class="nav-links">
-      <a href="./index.html">Home</a>
+      <a href="index.html">Home</a>
       <div class="dropdown">
         <span class="nav-label">Works</span>
         <div class="dropdown-content">
-          <a href="./videos.html">Videos</a>
-          <a href="./images.html">Images</a>
+          <a href="videos.html">Videos</a>
+          <a href="images.html">Images</a>
         </div>
       </div>
-      <a href="./about.html">About</a>
-      <a href="./contact.html">Contact</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
     </div>
   </div>
 </nav>
 
 <main class="page-content">
   <section class="video-gallery">
-
-    <!-- Replace src with your actual video files -->
-    <div class="video-card">
-      <video src="./videos/1.mp4" muted loop></video>
-    </div>
-
-    <div class="video-card">
-      <video src="./videos/2.mp4" muted loop></video>
-    </div>
-
-    <div class="video-card">
-      <video src="./videos/3.mp4" muted loop></video>
-    </div>
-
-    <div class="video-card">
-      <video src="./videos/4.mp4" muted loop></video>
-    </div>
-
+    <!-- Vimeo video cards -->
+    <div class="video-card" data-vimeo="1167151626"></div>
+    <div class="video-card" data-vimeo="1155265233"></div>
+    <div class="video-card" data-vimeo="1155279695"></div>
+    <div class="video-card" data-vimeo="1155288512"></div>
+    <div class="video-card" data-vimeo="1167151626"></div>
   </section>
 </main>
 
-<!-- Video Lightbox -->
+<!-- FULLSCREEN VIDEO LIGHTBOX -->
 <div class="video-lightbox" id="videoLightbox">
-  <video controls autoplay></video>
+  <iframe src="" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 </div>
 
 <footer>
