@@ -2,50 +2,45 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Dendrite Creative Studio</title>
+<title>Dendrite Creative Studio — Home</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="./style.css">
+<script src="./script.js" defer></script>
 </head>
-
 <body>
 
 <nav class="nav">
   <div class="nav-container">
     <div class="logo-wrap">
-      <a href="index.html"><img src="image/logo.png" alt="Logo"></a>
+      <a href="./index.html"><img src="./image/logo.png" alt="Logo"></a>
       <span class="logo-text">DENDRITE CREATIVE STUDIO</span>
     </div>
     <div class="nav-links">
-      <a href="index.html">Home</a>
+      <a href="./index.html">Home</a>
       <div class="dropdown">
-        <a href="works.html">Works</a>
+        <span class="nav-label">Works</span>
         <div class="dropdown-content">
-          <a href="videos.html">Videos</a>
-          <a href="images.html">Images</a>
+          <a href="./videos.html">Videos</a>
+          <a href="./images.html">Images</a>
         </div>
       </div>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
+      <a href="./about.html">About</a>
+      <a href="./contact.html">Contact</a>
     </div>
   </div>
 </nav>
 
-<main>
-  <!-- VIDEO BACKGROUND -->
-  <div class="video-background">
-    <iframe 
-      src="https://player.vimeo.com/video/1167151626?autoplay=1&loop=1&muted=1&background=1" 
-      frameborder="0" 
-      allow="autoplay; fullscreen" 
-      allowfullscreen>
-    </iframe>
-  </div>
+<div class="video-wrapper">
+  <div class="video-fallback"></div>
+  <iframe src="https://player.vimeo.com/video/1167151626?background=1&autoplay=1&loop=1&muted=1&title=0&byline=0&portrait=0"
+          frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+</div>
 
-  <!-- SERVICES TEXT -->
+<main class="home-content">
   <section class="hero-section">
     <div class="services-text" id="services-text">
       <p>Graphic Design</p>
-      <p>Web Design| Web Developement</p>
+      <p>Web Design | Web Development</p>
       <p>Video Art | Motion Graphics</p>
       <p>Live Stage Visuals</p>
       <p>Music & Sound Design</p>
@@ -57,32 +52,5 @@
   © 2026 Dendrite Creative Studio
 </footer>
 
-<script>
-// Animate letters (fade-in sequentially) with spaces preserved
-const textContainer = document.querySelectorAll("#services-text p");
-
-textContainer.forEach((line, index) => {
-  const letters = line.textContent.split("");
-  line.textContent = "";
-
-  letters.forEach((letter, i) => {
-    const span = document.createElement("span");
-    span.textContent = letter === " " ? "\u00A0" : letter; // preserve spaces
-    span.style.opacity = 0;
-    span.style.display = "inline-block";
-    span.style.transition = "opacity 0.5s ease";
-    span.style.transitionDelay = `${i * 0.05 + index * 0.2}s`;
-    line.appendChild(span);
-  });
-});
-
-window.addEventListener("load", () => {
-  document.querySelectorAll("#services-text p span").forEach(span => {
-    span.style.opacity = 1;
-  });
-});
-</script>
-
 </body>
 </html>
-
