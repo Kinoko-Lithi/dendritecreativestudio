@@ -1,4 +1,28 @@
-document.addEventListener("DOMContentLoaded", function () {
+window.addEventListener("load", function() {
+  const container = document.getElementById("services-text");
+  if(!container) return;
+
+  const lines = container.querySelectorAll("p");
+  lines.forEach((line, index) => {
+    const text = line.textContent;
+    line.textContent = "";
+
+    text.split("").forEach((char, i) => {
+      const span = document.createElement("span");
+      span.textContent = char === " " ? "\u00A0" : char;
+      span.style.opacity = "0";
+      span.style.transform = "translateY(8px)";
+      span.style.display = "inline-block";
+      span.style.transition = "opacity 0.4s ease, transform 0.4s ease";
+      line.appendChild(span);
+
+      setTimeout(() => {
+        span.style.opacity = "1";
+        span.style.transform = "translateY(0)";
+      }, i*40 + index*250);
+    });
+  });
+});document.addEventListener("DOMContentLoaded", function () {
 
   const cards = document.querySelectorAll(".video-card");
   const lightbox = document.getElementById("videoLightbox");
@@ -53,3 +77,4 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 });
+
