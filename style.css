@@ -27,7 +27,7 @@ body {
   backdrop-filter: blur(8px);
   z-index: 1000;
   display: flex;
-  justify-content: center; /* container will handle left alignment */
+  justify-content: center;
   align-items: center;
 }
 
@@ -35,7 +35,7 @@ body {
   max-width: 1200px;
   width: 100%;
   display: flex;
-  justify-content: space-between; /* logo left, links right */
+  justify-content: space-between;
   align-items: center;
   padding: 0 40px;
 }
@@ -103,37 +103,9 @@ body {
 }
 
 /* ============================= */
-/* HOME VIDEO BACKGROUND */
+/* HOME PAGE HERO / SERVICES */
 /* ============================= */
-.video-wrapper {
-  position: fixed;
-  inset: 0;
-  z-index: -2;
-  overflow: hidden;
-}
-
-.video-wrapper iframe {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-}
-
-.video-fallback {
-  position: absolute;
-  inset: 0;
-  background: #f0ead6; /* eggshell white */
-  z-index: -1;
-}
-
-/* ============================= */
-/* PAGE CONTENT */
-/* ============================= */
-.home-content,
-.page-content {
+.home-content {
   padding-top: 160px;
   min-height: 100vh;
   max-width: 1200px;
@@ -142,9 +114,6 @@ body {
   padding-right: 40px;
 }
 
-/* ============================= */
-/* HERO / SERVICES TEXT (HOME) */
-/* ============================= */
 .hero-section {
   text-align: left;
 }
@@ -161,7 +130,7 @@ body {
 }
 
 /* ============================= */
-/* IMAGE GRID + LIGHTBOX */
+/* IMAGE GALLERY + LIGHTBOX */
 /* ============================= */
 .image-grid {
   display: grid;
@@ -185,7 +154,7 @@ body {
 .lightbox {
   position: fixed;
   inset: 0;
-  background: rgba(240, 234, 214, 0.95);
+  background: rgba(250, 241, 241, 0.95);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -209,6 +178,7 @@ body {
 
 /* ============================= */
 /* VIDEO PAGE */
+/* ============================= */
 .video-gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -222,7 +192,7 @@ body {
   aspect-ratio: 16/9;
   border-radius: 12px;
   overflow: hidden;
-  background: #f0ead6; /* eggshell white */
+  background: #FAF1F1; /* soft off-white */
   transform: rotate(var(--rotate, 0deg));
   transition: transform 0.4s ease, box-shadow 0.4s ease;
   cursor: pointer;
@@ -244,13 +214,13 @@ body {
 
 .video-card:hover video,
 .video-card:hover iframe {
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.35);
 }
 
 .video-lightbox {
   position: fixed;
   inset: 0;
-  background: rgba(240, 234, 214, 0.95);
+  background: #FAF1F1;
   display: flex;
   align-items: center;
   justify-content: center;
