@@ -141,7 +141,6 @@ body {
   display: block;
 }
 
-/* Optional artistic hover */
 .video-card:hover {
   transform: rotate(0deg) scale(1.02);
 }
@@ -177,14 +176,24 @@ body {
   font-weight: 600;
 }
 
-.contact-item a {
+/* ============================= */
+/* CARD LINKS (NEW INTEGRATED RULE) */
+/* ============================= */
+
+/* Only links inside cards become dark purple */
+
+.video-card a,
+.contact-item a,
+.card a {
+  color: #4b0082;
   text-decoration: none;
-  color: #00796b;
   transition: color 0.3s ease;
 }
 
-.contact-item a:hover {
-  color: #004d40;
+.video-card a:hover,
+.contact-item a:hover,
+.card a:hover {
+  color: #2e004f;
 }
 
 /* ============================= */
