@@ -48,7 +48,7 @@ body {
 }
 
 /* ============================= */
-/* HOME VIDEO BACKGROUND */
+/* HOME PAGE VIDEO BACKGROUND */
 /* ============================= */
 .home-page {
   position: relative;
@@ -56,10 +56,7 @@ body {
 
 .video-background {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   overflow: hidden;
   z-index: 0;
 }
@@ -68,23 +65,23 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 177.77vh;
-  height: 100vh;
-  min-width: 100vw;
-  min-height: 56.25vw;
+  width: 100vw;
+  height: 56.25vw; /* 16:9 ratio */
+  min-height: 100vh;
+  min-width: 177.77vh;
   transform: translate(-50%, -50%);
   pointer-events: none;
 }
 
 /* ============================= */
-/* HERO TEXT (LEFT ALIGNED) */
+/* HERO TEXT */
 /* ============================= */
 .hero {
   position: relative;
   height: 100vh;
   display: flex;
   align-items: center;
-  padding-left: 80px;
+  padding-left: 100px;
   z-index: 2;
 }
 
@@ -92,10 +89,11 @@ body {
   font-size: 28px;
   font-weight: 600;
   margin-bottom: 18px;
+  color: #000;
 }
 
 /* ============================= */
-/* GENERAL CONTENT */
+/* GENERAL PAGE CONTENT */
 /* ============================= */
 .page-content {
   padding-top: 120px;
@@ -123,7 +121,7 @@ footer {
   }
 
   .hero {
-    padding-left: 30px;
+    padding-left: 40px;
   }
 
   .hero-text p {
