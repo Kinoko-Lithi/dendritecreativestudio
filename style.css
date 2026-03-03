@@ -10,7 +10,8 @@
 html, body {
   height: 100%;
   font-family: Arial, Helvetica, sans-serif;
-  background: #D9D9D9; /* unified background across all pages */
+  background: #D9D9D9; /* site-wide background */
+  color: #222;
 }
 
 body {
@@ -70,7 +71,7 @@ body {
   cursor: pointer;
 }
 
-/* Dropdown fix */
+/* Dropdown */
 .dropdown {
   position: relative;
 }
@@ -124,14 +125,14 @@ body {
 }
 
 /* ============================= */
-/* HOME CONTENT */
+/* HOME CONTENT / SERVICES TEXT */
 /* ============================= */
 .home-page .services-text {
   font-size: 24px;
   font-weight: 600;
   color: #000;
-  padding-left: 60px;  /* position text more to the right */
-  padding-top: 120px;
+  padding-left: 80px; /* moved more to the right */
+  padding-top: 160px;
   line-height: 1.6;
 }
 
@@ -149,17 +150,19 @@ body {
 
 /* ============================= */
 /* PAGE CONTENT */
+/* ============================= */
 .page-content {
   flex: 1;
   max-width: 1200px;
   margin: auto;
-  padding-top: 100px;
+  padding-top: 120px;
   padding-left: 40px;
   padding-right: 40px;
 }
 
 /* ============================= */
 /* VIDEO GRID */
+/* ============================= */
 .video-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -187,11 +190,12 @@ body {
   width: 100%;
   height: 100%;
   border: none;
-  background: #FAF1F1; /* egg-shell white background for videos */
+  background: #D9D9D9; /* matches site background */
 }
 
 /* ============================= */
 /* IMAGE GRID */
+/* ============================= */
 .image-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -280,9 +284,10 @@ footer {
   margin-top: auto;
   padding: 30px;
   text-align: center;
-  background: white;
+  background: #D9D9D9; /* matches site background */
   border-top: 1px solid #eee;
   font-size: 14px;
+  color: #222;
 }
 
 /* ============================= */
