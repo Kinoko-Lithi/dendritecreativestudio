@@ -143,7 +143,32 @@ footer {
   padding-left: 60px;
   padding-right: 60px;
 }
+/* ============================= */
+/* PAGE CONTENT / HOME PAGE */
+/* ============================= */
+.page-content {
+  padding-top: 120px;
+  padding-left: 20px;
+  padding-right: 20px;
+  min-height: 80vh;
+  max-width: 1200px;
+  margin: auto;
+}
 
+/* ============================= */
+/* HOME PAGE HERO / SERVICES TEXT */
+/* ============================= */
+.home-page .services-text {
+  font-size: 24px;        /* slightly bigger text */
+  font-weight: 600;
+  color: #000;            /* black text */
+  padding-left: 40px;     /* indented from left */
+  line-height: 1.6;
+}
+
+.home-page .services-text p {
+  margin-bottom: 16px;
+}
 /* ===================== */
 /* DROPDOWN FIX */
 /* ===================== */
@@ -229,4 +254,5 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+
 
