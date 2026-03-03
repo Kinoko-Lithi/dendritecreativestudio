@@ -56,10 +56,11 @@ body {
   font-size: 14px;
 }
 
+/* Nav Links */
 .nav-links {
   display: flex;
   gap: 25px;
-  position: relative;
+  align-items: center;
 }
 
 .nav-links a,
@@ -67,6 +68,7 @@ body {
   text-decoration: none;
   color: #000;
   font-weight: 500;
+  font-size: 15px;
   cursor: pointer;
 }
 
@@ -92,7 +94,6 @@ body {
   padding: 8px 15px;
   text-decoration: none;
   color: #000;
-  display: block;
 }
 
 .dropdown-content a:hover {
@@ -116,7 +117,7 @@ body {
 }
 
 /* ============================= */
-/* HOME PAGE CENTERED SERVICES */
+/* HOME HERO CENTERED */
 /* ============================= */
 .hero-section {
   height: calc(100vh - 70px);
@@ -127,7 +128,7 @@ body {
 
 .home-page .services-text {
   text-align: center;
-  font-size: 30px;
+  font-size: 32px;
   font-weight: 600;
   line-height: 1.6;
 }
@@ -157,23 +158,13 @@ body {
   aspect-ratio: 16 / 9;
   overflow: hidden;
   border-radius: 12px;
-  transform: rotate(-2deg);
   transition: 0.4s ease;
-}
-
-.video-card:nth-child(even) {
-  transform: rotate(2deg);
-}
-
-.video-card:hover {
-  transform: rotate(0deg) scale(1.05);
 }
 
 .video-card iframe {
   width: 100%;
   height: 100%;
   border: none;
-  background: #faf1f1;
 }
 
 /* ============================= */
@@ -190,7 +181,6 @@ body {
   width: 100%;
   border-radius: 10px;
   transition: transform 0.3s ease;
-  cursor: zoom-in;
 }
 
 .image-grid img:hover {
@@ -198,11 +188,10 @@ body {
 }
 
 /* ============================= */
-/* ABOUT PAGE */
+/* ABOUT */
 /* ============================= */
 .about-section {
   display: flex;
-  align-items: flex-start;
   gap: 40px;
   margin-top: 40px;
   flex-wrap: wrap;
@@ -223,7 +212,7 @@ body {
 }
 
 /* ============================= */
-/* CONTACT PAGE */
+/* CONTACT */
 /* ============================= */
 .contact-section {
   max-width: 700px;
@@ -232,7 +221,6 @@ body {
   background: white;
   border-radius: 12px;
   box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-  text-align: left;
 }
 
 .contact-section h2 {
@@ -250,13 +238,11 @@ body {
 .contact-item strong {
   display: inline-block;
   width: 110px;
-  font-weight: 600;
 }
 
 .contact-item a {
   text-decoration: none;
   color: #4B0082;
-  transition: color 0.3s ease;
 }
 
 .contact-item a:hover {
@@ -278,35 +264,61 @@ footer {
 /* ============================= */
 /* RESPONSIVE */
 /* ============================= */
+
+/* Tablet */
 @media (max-width: 1024px) {
+  .video-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
   .image-grid {
     grid-template-columns: repeat(3, 1fr);
   }
-  .video-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 
+/* Mobile */
 @media (max-width: 768px) {
-  .nav-container {
-    flex-direction: column;
-    gap: 15px;
-  }
-  .image-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
 
-@media (max-width: 480px) {
-  .image-grid,
-  .video-grid {
-    grid-template-columns: 1fr;
+  .nav-container {
+    padding: 0 20px;
   }
-  .about-section {
-    flex-direction: column;
-    align-items: center;
+
+  .logo-text {
+    display: none; /* cleaner mobile look */
   }
+
+  .nav-links {
+    gap: 15px;
+    font-size: 14px;
+  }
+
+  .page-content {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
   .home-page .services-text {
     font-size: 22px;
   }
+
+  .video-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .image-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+
+  .home-page .services-text {
+    font-size: 20px;
+  }
+
+  .image-grid {
+    grid-template-columns: 1fr;
+  }
+
 }
