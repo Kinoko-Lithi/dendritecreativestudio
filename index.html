@@ -1,44 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>DENDRITE — Home</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Dendrite Creative Studio — Home</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="./style.css">
 </head>
-
 <body class="home-page">
 
-  <!-- NAVIGATION -->
-  <nav class="nav">
-    <div class="logo">DENDRITE</div>
-    <div class="nav-links">
-      <a href="works.html">Works</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
+<!-- VIMEO BACKGROUND -->
+<div class="video-background">
+  <iframe 
+    src="https://player.vimeo.com/video/1167151626?background=1&autoplay=1&loop=1&muted=0"
+    frameborder="0"
+    allow="autoplay; fullscreen"
+    allowfullscreen>
+  </iframe>
+</div>
+
+<nav class="nav">
+  <div class="nav-container">
+    <div class="logo-wrap">
+      <a href="./index.html"><img src="./image/logo.png" alt="Logo"></a>
+      <span class="logo-text">DENDRITE CREATIVE STUDIO</span>
     </div>
-  </nav>
 
-  <!-- VIDEO BACKGROUND -->
-  <div class="video-background">
-    <iframe
-      src="https://player.vimeo.com/video/1167151626?background=1&autoplay=1&loop=1&muted=1&controls=0"
-      frameborder="0"
-      allow="autoplay; fullscreen"
-      allowfullscreen>
-    </iframe>
+    <div class="nav-links">
+      <a href="./index.html">Home</a>
+      <div class="dropdown">
+        <span class="nav-label">Works</span>
+        <div class="dropdown-content">
+          <a href="./videos.html">Videos</a>
+          <a href="./images.html">Images</a>
+        </div>
+      </div>
+      <a href="./about.html">About</a>
+      <a href="./contact.html">Contact</a>
+    </div>
   </div>
+</nav>
 
-  <!-- TEXT OVER VIDEO -->
-  <section class="hero">
-      <p><span>Graphic Design</span></p>
-      <p><span>Music & Sound Design</span></p>
-      <p><span>Video Art | Motion Graphics</span></p>
-      <p><span>Live Stage Visuals</span></p>
-      <p><span>Web Design | Web Development</span></p>
+<main class="page-content">
+  <section class="hero-section">
+    <div class="services-text">
+      <p>Graphic Design</p>
+      <p>Video Art | Motion Graphics</p>
+      <p>Live Stage Visuals</p>
+      <p>Web Design</p>
+    </div>
   </section>
+</main>
+
+<footer>
+  © 2026 Dendrite Creative Studio
+</footer>
 
 </body>
 </html>
-
-
