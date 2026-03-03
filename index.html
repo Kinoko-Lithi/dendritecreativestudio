@@ -1,78 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Dendrite Creative Studio — Home</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./style.css">
+<meta charset="UTF-8">
+<title>Dendrite Creative Studio — Home</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="./style.css">
 </head>
 <body>
 
-  <!-- VIMEO BACKGROUND -->
-  <div class="video-background">
-    <iframe 
-      src="https://player.vimeo.com/video/1167151626?background=1&autoplay=1&loop=1&muted=1"
-      frameborder="0"
-      allow="autoplay; fullscreen"
-      allowfullscreen>
-    </iframe>
-  </div>
+<!-- VIMEO BACKGROUND -->
+<div class="video-background">
+  <iframe 
+    src="https://player.vimeo.com/video/1167151626?background=1&autoplay=1&loop=1&muted=1"
+    frameborder="0"
+    allow="autoplay; fullscreen"
+    allowfullscreen>
+  </iframe>
+</div>
 
-  <nav class="nav">
-    <div class="nav-container">
-      <div class="logo-wrap">
-        <a href="./index.html"><img src="./image/logo.png" alt="Logo"></a>
-        <span class="logo-text">DENDRITE CREATIVE STUDIO</span>
-      </div>
-      <div class="nav-links">
-        <a href="./index.html">Home</a>
-        <div class="dropdown">
-          <span class="nav-label">Works</span>
-          <div class="dropdown-content">
-            <a href="./videos.html">Videos</a>
-            <a href="./images.html">Images</a>
-          </div>
-        </div>
-        <a href="./about.html">About</a>
-        <a href="./contact.html">Contact</a>
-      </div>
+<!-- NAVIGATION -->
+<nav class="nav">
+  <div class="nav-container">
+    <div class="logo-wrap">
+      <a href="./index.html"><img src="./image/logo.png" alt="Logo"></a>
+      <span class="logo-text">DENDRITE CREATIVE STUDIO</span>
     </div>
-  </nav>
-
-  <main class="page-content home-page">
-    <section class="hero-section">
-      <div class="services-text">
-        <!-- Wrap each letter in a span for animation -->
-        <p>
-          <span>G</span><span>r</span><span>a</span><span>p</span><span>h</span><span>i</span><span>c</span> <span>D</span><span>e</span><span>s</span><span>i</span><span>g</span><span>n</span>
-        </p>
-        <p>
-          <span>V</span><span>i</span><span>d</span><span>e</span><span>o</span> <span>A</span><span>r</span><span>t</span> | <span>M</span><span>o</span><span>t</span><span>i</span><span>o</span><span>n</span> <span>G</span><span>r</span><span>a</span><span>p</span><span>h</span><span>i</span><span>c</span><span>s</span>
-        </p>
-        <p>
-          <span>L</span><span>i</span><span>v</span><span>e</span> <span>S</span><span>t</span><span>a</span><span>g</span><span>e</span> <span>V</span><span>i</span><span>s</span><span>u</span><span>a</span><span>l</span><span>s</span>
-        </p>
-        <p>
-          <span>W</span><span>e</span><span>b</span> <span>D</span><span>e</span><span>s</span><span>i</span><span>g</span><span>n</span>
-        </p>
+    <div class="nav-links">
+      <a href="./index.html">Home</a>
+      <div class="dropdown">
+        <span class="nav-label">Works</span>
+        <div class="dropdown-content">
+          <a href="./videos.html">Videos</a>
+          <a href="./images.html">Images</a>
+        </div>
       </div>
-    </section>
-  </main>
+      <a href="./about.html">About</a>
+      <a href="./contact.html">Contact</a>
+    </div>
+  </div>
+</nav>
 
-  <footer>
-    © 2026 Dendrite Creative Studio
-  </footer>
+<!-- MAIN CONTENT -->
+<main class="page-content home-page">
+  <section class="hero-section">
+    <div class="services-text">
+      <p><span>Graphic Design</span></p>
+      <p><span>Video Art | Motion Graphics</span></p>
+      <p><span>Live Stage Visuals</span></p>
+      <p><span>Web Design</span></p>
+    </div>
+  </section>
+</main>
 
-  <!-- Optional: add small script to animate letters sequentially -->
-  <script>
-    const spans = document.querySelectorAll('.services-text span');
-    spans.forEach((span, i) => {
-      setTimeout(() => {
-        span.style.opacity = '1';
-        span.style.transform = 'translateY(0)';
-      }, i * 50); // stagger letters by 50ms
-    });
-  </script>
+<footer>
+  © 2026 Dendrite Creative Studio
+</footer>
+
+<!-- Optional: Animate letters on page load -->
+<script>
+  const spans = document.querySelectorAll('.services-text span');
+  spans.forEach((span, idx) => {
+    setTimeout(() => {
+      span.style.opacity = 1;
+      span.style.transform = 'translateY(0)';
+    }, idx * 200);
+  });
+</script>
 
 </body>
 </html>
