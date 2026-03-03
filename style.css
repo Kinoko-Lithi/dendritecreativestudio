@@ -1,5 +1,5 @@
 /* ===================== */
-/* RESET & GLOBAL STYLES */
+/* RESET */
 /* ===================== */
 * {
   margin: 0;
@@ -9,13 +9,14 @@
 
 html, body {
   height: 100%;
-  font-family: Arial, Helvetica, sans-serif;
-  color: #000;
 }
 
 body {
+  font-family: Arial, Helvetica, sans-serif;
   display: flex;
   flex-direction: column;
+  background: #faf1f1;
+  color: #000;
 }
 
 /* ===================== */
@@ -59,7 +60,6 @@ body {
 .nav-links {
   display: flex;
   gap: 25px;
-  align-items: center;
 }
 
 .nav-links a,
@@ -67,16 +67,10 @@ body {
   text-decoration: none;
   color: #000;
   font-weight: 500;
-  position: relative;
   cursor: pointer;
 }
 
-.nav-links a:hover,
-.nav-label:hover {
-  opacity: 0.7;
-}
-
-/* Dropdown */
+/* Dropdown fix */
 .dropdown {
   position: relative;
 }
@@ -110,7 +104,7 @@ body {
 }
 
 /* ===================== */
-/* VIMEO BACKGROUND (HOME) */
+/* VIMEO BACKGROUND (Home) */
 /* ===================== */
 .video-background {
   position: fixed;
@@ -130,13 +124,16 @@ body {
 }
 
 /* ===================== */
-/* HOME PAGE SERVICES TEXT */
+/* HOME CONTENT / HERO */
 /* ===================== */
 .home-page .services-text {
+  position: absolute;
+  top: 50%;
+  left: 80px; /* adjust to move right */
+  transform: translateY(-50%);
   font-size: 28px;
   font-weight: 600;
   color: #000;
-  padding-left: 60px; /* text a bit more to the right */
   line-height: 1.6;
 }
 
@@ -160,29 +157,25 @@ body {
 }
 
 /* ===================== */
-/* PAGE CONTENT & FOOTER */
+/* PAGE CONTENT */
 /* ===================== */
 .page-content {
   flex: 1;
   max-width: 1200px;
   margin: auto;
   padding-top: 120px;
-  padding-left: 60px;
-  padding-right: 60px;
-}
-
-footer {
-  margin-top: auto;
-  padding: 30px;
-  text-align: center;
-  background: white;
-  border-top: 1px solid #eee;
-  font-size: 14px;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
 /* ===================== */
-/* VIDEO PAGE GRID */
+/* VIDEO GRID */
 /* ===================== */
+.page-title {
+  margin-bottom: 40px;
+  font-size: 28px;
+}
+
 .video-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -217,37 +210,28 @@ footer {
 /* ===================== */
 .about-section {
   display: flex;
-  align-items: flex-start;
   gap: 40px;
-  max-width: 1000px;
-  margin: 80px auto;
-  flex-wrap: wrap;
-}
-
-.about-image {
-  flex: 0 0 300px;
+  align-items: flex-start;
+  margin-top: 60px;
 }
 
 .about-image img {
-  width: 100%;
+  width: 300px;
   border-radius: 12px;
-  object-fit: cover;
 }
 
 .about-text {
   flex: 1;
-  min-width: 300px;
 }
 
 .about-text h2 {
-  font-size: 32px;
   margin-bottom: 20px;
+  font-size: 28px;
 }
 
 .about-text p {
-  line-height: 1.7;
+  line-height: 1.6;
   font-size: 16px;
-  color: #000;
 }
 
 /* ===================== */
@@ -282,12 +266,24 @@ footer {
 
 .contact-item a {
   text-decoration: none;
-  color: #5D3A96; /* dark purple for links inside card */
+  color: #4B0082; /* dark purple for links */
   transition: color 0.3s ease;
 }
 
 .contact-item a:hover {
-  opacity: 0.7;
+  color: #6a1b9a;
+}
+
+/* ===================== */
+/* FOOTER */
+/* ===================== */
+footer {
+  margin-top: auto;
+  padding: 30px;
+  text-align: center;
+  background: white;
+  border-top: 1px solid #eee;
+  font-size: 14px;
 }
 
 /* ===================== */
@@ -299,31 +295,23 @@ footer {
   }
 }
 
-@media (max-width: 768px) {
-  .nav-container {
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  .about-section {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  
-  .about-image, .about-text {
-    flex: none;
-    width: 100%;
-  }
-  
-  .contact-section {
-    width: 90%;
-    padding: 40px 20px;
-  }
-}
-
 @media (max-width: 700px) {
   .video-grid {
     grid-template-columns: 1fr;
+  }
+
+  .about-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-image img {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+
+  .home-page .services-text {
+    left: 40px;
+    font-size: 22px;
   }
 }
