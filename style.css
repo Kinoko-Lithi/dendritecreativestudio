@@ -21,17 +21,17 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  height: 80px;
+  height: 80px;                /* slightly taller */
   background: #D9D9D9;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 30px;
+  padding: 0 30px;             /* tighter left spacing */
   z-index: 1000;
 }
 
 .logo {
-  font-size: 26px;
+  font-size: 26px;             /* bigger logo */
   font-weight: 700;
   letter-spacing: 2px;
 }
@@ -75,20 +75,19 @@ body {
 }
 
 /* ============================= */
-/* HERO TEXT — CENTERED */
+/* HERO TEXT */
 /* ============================= */
 .hero {
   position: relative;
   height: 100vh;
   display: flex;
-  justify-content: center;     /* horizontal center */
-  align-items: center;         /* vertical center */
-  text-align: center;
+  align-items: center;
+  padding-left: 80px;
   z-index: 2;
 }
 
 .hero-text p {
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 600;
   margin-bottom: 18px;
 }
@@ -131,8 +130,11 @@ footer {
     font-size: 13px;
   }
 
-  .hero-text p {
-    font-size: 22px;
+  .hero {
+    padding-left: 30px;
   }
 
+  .hero-text p {
+    font-size: 20px;
+  }
 }
