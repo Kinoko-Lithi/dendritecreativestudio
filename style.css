@@ -1,6 +1,6 @@
-/* ===================== */
-/* RESET */
-/* ===================== */
+/* ============================= */
+/* RESET / GLOBAL STYLES */
+/* ============================= */
 * {
   margin: 0;
   padding: 0;
@@ -9,17 +9,19 @@
 
 html, body {
   height: 100%;
-}
-
-body {
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
   flex-direction: column;
 }
 
-/* ===================== */
+body {
+  background: #faf1f1;
+  color: #000;
+}
+
+/* ============================= */
 /* NAVIGATION */
-/* ===================== */
+/* ============================= */
 .nav {
   position: fixed;
   top: 0;
@@ -65,113 +67,11 @@ body {
   text-decoration: none;
   color: #000;
   font-weight: 500;
+  cursor: pointer;
+  position: relative;
 }
 
-/* ===================== */
-/* VIMEO BACKGROUND */
-/* ===================== */
-.video-background {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  overflow: hidden;
-}
-
-.video-background iframe {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 177.77vh; /* 16:9 ratio */
-  height: 100vh;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-}
-
-/* ===================== */
-/* HOME CONTENT */
-/* ===================== */
-.home-content {
-  flex: 1;
-  padding-top: 160px;
-  padding-left: 80px;
-  color: white;
-}
-
-.hero {
-  max-width: 600px;
-}
-
-.services p {
-  font-size: 26px;
-  margin-bottom: 18px;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeUp 0.8s ease forwards;
-}
-
-.services p:nth-child(1) { animation-delay: 0.2s; }
-.services p:nth-child(2) { animation-delay: 0.4s; }
-.services p:nth-child(3) { animation-delay: 0.6s; }
-.services p:nth-child(4) { animation-delay: 0.8s; }
-
-@keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ===================== */
-/* FOOTER */
-/* ===================== */
-footer {
-  margin-top: auto;
-  padding: 30px;
-  text-align: center;
-  background: white;
-  border-top: 1px solid #eee;
-  font-size: 14px;
-}
-/* ===================== */
-/* PAGE CONTENT */
-/* ===================== */
-.page-content {
-  flex: 1;
-  max-width: 1200px;
-  margin: auto;
-  padding-top: 120px;
-  padding-left: 60px;
-  padding-right: 60px;
-}
-/* ============================= */
-/* PAGE CONTENT / HOME PAGE */
-/* ============================= */
-.page-content {
-  padding-top: 120px;
-  padding-left: 20px;
-  padding-right: 20px;
-  min-height: 80vh;
-  max-width: 1200px;
-  margin: auto;
-}
-
-/* ============================= */
-/* HOME PAGE HERO / SERVICES TEXT */
-/* ============================= */
-.home-page .services-text {
-  font-size: 24px;        /* slightly bigger text */
-  font-weight: 600;
-  color: #000;            /* black text */
-  padding-left: 40px;     /* indented from left */
-  line-height: 1.6;
-}
-
-.home-page .services-text p {
-  margin-bottom: 16px;
-}
-/* ===================== */
-/* DROPDOWN FIX */
-/* ===================== */
+/* Dropdown Fix */
 .dropdown {
   position: relative;
 }
@@ -204,18 +104,78 @@ footer {
   display: flex;
 }
 
-/* ===================== */
-/* VIDEO GRID */
-/* ===================== */
-.page-title {
-  margin-bottom: 40px;
-  font-size: 28px;
+/* ============================= */
+/* VIMEO BACKGROUND FOR INDEX */
+/* ============================= */
+.video-background {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
 }
 
+.video-background iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 177.77vh; /* 16:9 ratio */
+  height: 100vh;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+/* ============================= */
+/* HOME PAGE CONTENT / SERVICES */
+/* ============================= */
+.home-page .services-text {
+  font-size: 24px;
+  font-weight: 600;
+  color: #000;
+  padding-left: 120px; /* move text right over video */
+  padding-top: 180px;  /* vertical offset */
+  line-height: 1.6;
+  max-width: 500px;
+}
+
+.home-page .services-text p {
+  margin-bottom: 16px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.home-page .services-text p:nth-child(1) { animation-delay: 0.2s; }
+.home-page .services-text p:nth-child(2) { animation-delay: 0.4s; }
+.home-page .services-text p:nth-child(3) { animation-delay: 0.6s; }
+.home-page .services-text p:nth-child(4) { animation-delay: 0.8s; }
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================= */
+/* PAGE CONTENT / GENERAL */
+/* ============================= */
+.page-content {
+  flex: 1;
+  max-width: 1200px;
+  margin: auto;
+  padding-top: 120px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+/* ============================= */
+/* VIDEO PAGE GRID */
+/* ============================= */
 .video-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 40px;
+  margin-top: 40px;
 }
 
 .video-card {
@@ -240,9 +200,59 @@ footer {
   border: none;
 }
 
-/* ===================== */
+/* ============================= */
+/* CONTACT PAGE */
+.contact-section {
+  max-width: 700px;
+  margin: 80px auto;
+  padding: 60px 40px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+  text-align: left;
+}
+
+.contact-section h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 28px;
+}
+
+.contact-items {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-item strong {
+  display: inline-block;
+  width: 110px;
+  font-weight: 600;
+}
+
+.contact-item a {
+  text-decoration: none;
+  color: #00796b;
+  transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+  color: #004d40;
+}
+
+/* ============================= */
+/* FOOTER */
+footer {
+  margin-top: auto;
+  padding: 30px;
+  text-align: center;
+  background: white;
+  border-top: 1px solid #eee;
+  font-size: 14px;
+}
+
+/* ============================= */
 /* RESPONSIVE */
-/* ===================== */
 @media (max-width: 1000px) {
   .video-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -253,6 +263,26 @@ footer {
   .video-grid {
     grid-template-columns: 1fr;
   }
+
+  .home-page .services-text {
+    padding-left: 40px;
+    padding-top: 150px;
+  }
 }
 
+@media (max-width: 500px) {
+  .nav-container {
+    flex-direction: column;
+    gap: 15px;
+  }
 
+  .nav-links {
+    gap: 15px;
+  }
+
+  .contact-item strong {
+    display: block;
+    width: 100%;
+    margin-bottom: 5px;
+  }
+}
