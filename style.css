@@ -21,27 +21,26 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  height: 80px;                /* slightly taller */
+  height: 70px;
   background: #D9D9D9;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 30px;             /* tighter left spacing */
-  z-index: 1000;
+  padding: 0 60px;
+  z-index: 100;
 }
 
 .logo {
-  font-size: 26px;             /* bigger logo */
-  font-weight: 700;
-  letter-spacing: 2px;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 
 .nav-links a {
-  margin-left: 35px;
+  margin-left: 30px;
   text-decoration: none;
   color: #000;
-  font-size: 15px;
-  font-weight: 500;
+  font-size: 14px;
 }
 
 .nav-links a:hover {
@@ -49,27 +48,27 @@ body {
 }
 
 /* ============================= */
-/* HOME VIDEO BACKGROUND */
+/* VIDEO BACKGROUND */
 /* ============================= */
-.home-page {
-  position: relative;
-}
-
 .video-background {
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
   overflow: hidden;
-  z-index: 0;
+  background: #D9D9D9;
 }
 
 .video-background iframe {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 100vw;
-  height: 56.25vw;
-  min-height: 100vh;
-  min-width: 177.77vh;
+  width: 177.77vh; /* 16:9 ratio */
+  height: 100vh;
+  min-width: 100vw;
+  min-height: 56.25vw;
   transform: translate(-50%, -50%);
   pointer-events: none;
 }
@@ -83,22 +82,14 @@ body {
   display: flex;
   align-items: center;
   padding-left: 80px;
-  z-index: 2;
+  z-index: 10;
 }
 
 .hero-text p {
   font-size: 28px;
   font-weight: 600;
   margin-bottom: 18px;
-}
-
-/* ============================= */
-/* GENERAL PAGE CONTENT */
-/* ============================= */
-.page-content {
-  padding-top: 140px;
-  padding-left: 60px;
-  padding-right: 60px;
+  color: #000;
 }
 
 /* ============================= */
@@ -117,17 +108,7 @@ footer {
 @media (max-width: 768px) {
 
   .nav {
-    height: 70px;
     padding: 0 20px;
-  }
-
-  .logo {
-    font-size: 20px;
-  }
-
-  .nav-links a {
-    margin-left: 20px;
-    font-size: 13px;
   }
 
   .hero {
@@ -137,4 +118,5 @@ footer {
   .hero-text p {
     font-size: 20px;
   }
+
 }
