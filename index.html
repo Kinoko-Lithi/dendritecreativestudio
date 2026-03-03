@@ -4,16 +4,14 @@
 <meta charset="UTF-8">
 <title>Dendrite Creative Studio — Home</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="./style.css">
 <style>
-  /* Ensure body and html cover full height */
   html, body {
     height: 100%;
     margin: 0;
-    padding: 0;
     font-family: Arial, Helvetica, sans-serif;
     background-color: #D9D9D9;
     color: #000;
+    overflow-x: hidden;
   }
 
   /* NAVIGATION */
@@ -37,24 +35,10 @@
     padding: 0 40px;
   }
 
-  .logo-wrap img {
-    height: 40px;
-  }
+  .logo-wrap img { height: 40px; }
+  .nav-links { display: flex; gap: 25px; }
+  .nav-links a, .nav-label { text-decoration: none; color: #000; font-weight: 500; cursor: pointer; }
 
-  .nav-links {
-    display: flex;
-    gap: 25px;
-  }
-
-  .nav-links a,
-  .nav-label {
-    text-decoration: none;
-    color: #000;
-    font-weight: 500;
-    cursor: pointer;
-  }
-
-  /* Dropdown */
   .dropdown { position: relative; }
   .dropdown-content {
     position: absolute;
@@ -68,21 +52,20 @@
     padding: 10px 0;
     z-index: 1000;
   }
-  .dropdown-content a {
-    padding: 8px 15px;
-    text-decoration: none;
-    color: #000;
-  }
+  .dropdown-content a { padding: 8px 15px; display: block; color: #000; text-decoration: none; }
   .dropdown-content a:hover { background: #f5f5f5; }
   .dropdown:hover .dropdown-content { display: flex; }
 
   /* VIDEO BACKGROUND */
   .video-background {
     position: fixed;
-    inset: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     z-index: -1;
     overflow: hidden;
-    background: #D9D9D9;
+    background-color: #D9D9D9;
   }
 
   .video-background iframe {
@@ -95,7 +78,7 @@
     pointer-events: none;
   }
 
-  /* HOME HERO TEXT */
+  /* HERO TEXT */
   .home-page .services-text {
     position: relative;
     padding-left: 80px;
@@ -111,6 +94,7 @@
     margin-bottom: 16px;
   }
 
+  /* Animate letters individually */
   .services-text span {
     display: inline-block;
     opacity: 0;
@@ -118,25 +102,23 @@
     transition: opacity 0.4s ease, transform 0.4s ease;
   }
 
+  /* FOOTER */
   footer {
-    margin-top: auto;
     padding: 30px;
     text-align: center;
     background: #D9D9D9;
     font-size: 14px;
+    margin-top: auto;
   }
 </style>
 </head>
 <body>
 
-<!-- VIMEO BACKGROUND -->
 <div class="video-background">
-  <iframe src="https://player.vimeo.com/video/1167151626?background=1&autoplay=1&loop=1&muted=1&controls=0"
-    frameborder="0" allow="autoplay; fullscreen" allowfullscreen>
-  </iframe>
+  <iframe src="https://player.vimeo.com/video/1167151626?background=1&autoplay=1&loop=1&muted=1"
+    frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 </div>
 
-<!-- NAVIGATION -->
 <nav class="nav">
   <div class="nav-container">
     <div class="logo-wrap">
@@ -158,7 +140,6 @@
   </div>
 </nav>
 
-<!-- HOME CONTENT -->
 <main class="page-content home-page">
   <section class="hero-section">
     <div class="services-text">
@@ -175,28 +156,20 @@
 </footer>
 
 <script>
-  // Animate letters like original
-  window.addEventListener("load", function() {
+  // Letter animation
+  window.addEventListener("load", () => {
     const container = document.querySelector(".services-text");
-    if (!container) return;
-
-    container.querySelectorAll("p").forEach((line, index) => {
+    container.querySelectorAll("p").forEach((line, idx) => {
       const text = line.textContent;
       line.textContent = "";
-
       text.split("").forEach((char, i) => {
         const span = document.createElement("span");
         span.textContent = char === " " ? "\u00A0" : char;
-        span.style.opacity = "0";
-        span.style.transform = "translateY(8px)";
-        span.style.display = "inline-block";
-        span.style.transition = "opacity 0.4s ease, transform 0.4s ease";
         line.appendChild(span);
-
         setTimeout(() => {
           span.style.opacity = "1";
           span.style.transform = "translateY(0)";
-        }, i*40 + index*250);
+        }, i*40 + idx*250);
       });
     });
   });
