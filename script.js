@@ -52,13 +52,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const rotateDeg = (Math.random() * 6 - 3) + "deg";
     card.style.setProperty("--rotate", rotateDeg);
 
-    // Click opens fullscreen lightbox
-    card.addEventListener("click", () => {
-      lightbox.classList.add("active");
-      lightboxIframe.src = getVimeoURL(videoId, true);
-      document.body.style.overflow = "hidden";
-    });
-  });
 
   // Close lightbox on click
   const closeLightbox = () => {
@@ -72,3 +65,4 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.key === "Escape") closeLightbox();
   });
 });
+
