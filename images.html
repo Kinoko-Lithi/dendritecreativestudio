@@ -5,6 +5,31 @@
 <title>Dendrite Creative Studio — Images</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="./style.css">
+
+<style>
+/* FULLSCREEN LIGHTBOX */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.95);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 95vw;
+  max-height: 95vh;
+  object-fit: contain;
+}
+</style>
+
 </head>
 <body>
 
@@ -34,7 +59,6 @@
   <h2>Images</h2>
 
   <div class="image-grid">
-    <!-- 33 images named 1.png → 33.png -->
     <img src="image/1.png" alt="">
     <img src="image/2.png" alt="">
     <img src="image/3.png" alt="">
@@ -69,7 +93,6 @@
     <img src="image/32.png" alt="">
     <img src="image/33.png" alt="">
   </div>
-
 </main>
 
 <!-- LIGHTBOX -->
@@ -81,23 +104,46 @@
   © 2026 Dendrite Creative Studio
 </footer>
 
-<!-- LIGHTBOX SCRIPT -->
 <script>
-const images = document.querySelectorAll('.image-grid img');
-const lightbox = document.getElementById('lightbox');
-const lbImg = lightbox.querySelector('img');
 
-images.forEach(img => {
-  img.addEventListener('click', () => {
-    lbImg.src = img.src;
-    lightbox.classList.add('active');
+/* FULLSCREEN IMAGE LIGHTBOX */
+
+const images = document.querySelectorAll(".image-grid img");
+const lightbox = document.getElementById("lightbox");
+const lightboxImage = lightbox.querySelector("img");
+
+function openLightbox(src) {
+  lightboxImage.src = src;
+  lightbox.classList.add("active");
+  document.body.style.overflow = "hidden";
+}
+
+function closeLightbox() {
+  lightbox.classList.remove("active");
+  lightboxImage.src = "";
+  document.body.style.overflow = "auto";
+}
+
+images.forEach(function(image) {
+  image.addEventListener("click", function() {
+    openLightbox(image.src);
   });
 });
 
-lightbox.addEventListener('click', () => {
-  lightbox.classList.remove('active');
-  lbImg.src = '';
+/* Click outside image closes */
+lightbox.addEventListener("click", function(event) {
+  if (event.target === lightbox) {
+    closeLightbox();
+  }
 });
+
+/* ESC closes */
+document.addEventListener("keydown", function(event) {
+  if (event.key === "Escape") {
+    closeLightbox();
+  }
+});
+
 </script>
 
 </body>
