@@ -11,7 +11,6 @@
 html, body {
   height: 100%;
   font-family: Arial, Helvetica, sans-serif;
-  background: #d9d9d9;
 }
 
 body {
@@ -19,6 +18,19 @@ body {
   flex-direction: column;
 }
 
+/* ============================= */
+/* VIDEO BACKGROUND */
+/* ============================= */
+
+.background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; /* behind all content */
+}
 
 /* ============================= */
 /* NAVIGATION */
@@ -29,7 +41,7 @@ body {
   top: 0;
   width: 100%;
   height: 70px;
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.9);
   border-bottom: 1px solid #eeeeee;
   z-index: 1000;
 }
@@ -76,7 +88,6 @@ body {
   cursor: pointer;
 }
 
-
 /* Dropdown */
 
 .dropdown {
@@ -110,7 +121,6 @@ body {
   display: flex;
 }
 
-
 /* ============================= */
 /* PAGE CONTENT */
 /* ============================= */
@@ -122,15 +132,16 @@ body {
   padding-top: 120px;
   padding-left: 40px;
   padding-right: 40px;
+  z-index: 1;
+  position: relative;
 }
 
-
 /* ============================= */
-/* HOME HERO */
+/* HOME HERO SECTION */
 /* ============================= */
 
 .hero-section {
-  height: calc(100vh - 70px);
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -141,19 +152,12 @@ body {
   font-size: 32px;
   font-weight: 600;
   line-height: 1.6;
+  color: #000000; /* text is black */
 }
 
 .home-page .services-text p {
   margin-bottom: 25px;
 }
-
-.services-text span {
-  display: inline-block;
-  opacity: 0;
-  transform: translateY(8px);
-  transition: opacity 0.4s ease, transform 0.4s ease;
-}
-
 
 /* ============================= */
 /* VIDEO GRID */
@@ -178,7 +182,6 @@ body {
   border: none;
 }
 
-
 /* ============================= */
 /* IMAGE GRID */
 /* ============================= */
@@ -196,9 +199,8 @@ body {
   display: block;
 }
 
-
 /* ============================= */
-/* ABOUT */
+/* ABOUT SECTION */
 /* ============================= */
 
 .about-section {
@@ -222,9 +224,8 @@ body {
   font-size: 28px;
 }
 
-
 /* ============================= */
-/* CONTACT */
+/* CONTACT SECTION */
 /* ============================= */
 
 .contact-section {
@@ -262,7 +263,6 @@ body {
   color: #2e004d;
 }
 
-
 /* ============================= */
 /* FOOTER */
 /* ============================= */
@@ -275,7 +275,6 @@ footer {
   border-top: 1px solid #eeeeee;
   font-size: 14px;
 }
-
 
 /* ============================= */
 /* RESPONSIVE */
@@ -292,7 +291,6 @@ footer {
     grid-template-columns: repeat(3, 1fr);
   }
 }
-
 
 /* Mobile */
 @media (max-width: 768px) {
@@ -328,7 +326,6 @@ footer {
   }
 }
 
-
 /* Small phones */
 @media (max-width: 480px) {
 
@@ -339,5 +336,4 @@ footer {
   .image-grid {
     grid-template-columns: 1fr;
   }
-
 }
