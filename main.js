@@ -1,49 +1,52 @@
 /* =========================
    SERVICES TEXT ANIMATION
 ========================= */
-window.addEventListener("load", () => {
+
+document.addEventListener("DOMContentLoaded", function () {
+
   const container = document.getElementById("services-text");
   if (!container) return;
 
   const lines = container.querySelectorAll("p");
 
-  lines.forEach((line, lineIndex) => {
+  lines.forEach(function (line, lineIndex) {
+
     const text = line.textContent;
     line.textContent = "";
 
-    text.split("").forEach((char, charIndex) => {
+    text.split("").forEach(function (char, charIndex) {
+
       const span = document.createElement("span");
+
       span.textContent = char === " " ? "\u00A0" : char;
       span.style.opacity = "0";
       span.style.transform = "translateY(8px)";
       span.style.display = "inline-block";
       span.style.transition = "opacity 0.4s ease, transform 0.4s ease";
+
       line.appendChild(span);
 
-      const delay = charIndex * 40 + lineIndex * 250; // delay in ms
+      setTimeout(function () {
+        span.style.opacity = "1";
+        span.style.transform = "translateY(0)";
+      }, charIndex * 40 + lineIndex * 250);
 
-      const start = performance.now();
-      function animate(timestamp) {
-        if (timestamp - start >= delay) {
-          span.style.opacity = "1";
-          span.style.transform = "translateY(0)";
-        } else {
-          requestAnimationFrame(animate);
-        }
-      }
-
-      requestAnimationFrame(animate);
     });
+
   });
+
 });
 
 
 /* =========================
-   VIMEO VIDEO GALLERY / LIGHTBOX
+   VIMEO VIDEO GALLERY
 ========================= */
-document.addEventListener("DOMContentLoaded", () => {
+
+document.addEventListener("DOMContentLoaded", function () {
+
   const cards = document.querySelectorAll(".video-card");
   const lightbox = document.getElementById("videoLightbox");
+
   if (!cards.length || !lightbox) return;
 
   const lightboxIframe = lightbox.querySelector("iframe");
@@ -58,11 +61,11 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.style.overflow = "auto";
   }
 
-  cards.forEach(card => {
+  cards.forEach(function (card) {
+
     const videoId = card.dataset.vimeo;
     if (!videoId) return;
 
-    // Create embedded preview iframe
     const iframe = document.createElement("iframe");
     iframe.src = buildVimeoURL(videoId, false);
     iframe.frameBorder = "0";
@@ -71,27 +74,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
     card.appendChild(iframe);
 
-    // Random slight rotation
     const randomRotation = (Math.random() * 6 - 3) + "deg";
     card.style.setProperty("--rotate", randomRotation);
 
-    // Open lightbox on click
-    card.addEventListener("click", () => {
+    card.addEventListener("click", function () {
+
       if (!lightboxIframe) return;
 
       lightboxIframe.src = buildVimeoURL(videoId, true);
       lightbox.classList.add("active");
       document.body.style.overflow = "hidden";
+
     });
+
   });
 
-  // Close lightbox when clicking overlay
   lightbox.addEventListener("click", closeLightbox);
 
-  // Close lightbox on Escape key
-  document.addEventListener("keydown", event => {
-    if (event.key === "Escape") {
-      closeLightbox();
-    }
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") closeLightbox();
   });
+
 });
