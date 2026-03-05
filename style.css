@@ -16,6 +16,11 @@ html, body {
 body {
   display: flex;
   flex-direction: column;
+  background: #d9d9d9;
+
+  /* Mac rendering fixes */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* ============================= */
@@ -26,10 +31,20 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+
+  width: 100vw;
+  height: 100vh;
+
   object-fit: cover;
-  z-index: -1; /* behind all content */
+
+  z-index: -1;
+
+  pointer-events: none;
+
+  /* Fix Mac Chrome / Safari rendering */
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: transform;
 }
 
 /* ============================= */
@@ -41,7 +56,7 @@ body {
   top: 0;
   width: 100%;
   height: 70px;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255,255,255,0.9);
   border-bottom: 1px solid #eeeeee;
   z-index: 1000;
 }
@@ -82,7 +97,7 @@ body {
 .nav-links a,
 .nav-label {
   text-decoration: none;
-  color: #000000;
+  color: #000;
   font-weight: 500;
   font-size: 15px;
   cursor: pointer;
@@ -110,7 +125,7 @@ body {
 .dropdown-content a {
   padding: 8px 15px;
   text-decoration: none;
-  color: #000000;
+  color: #000;
 }
 
 .dropdown-content a:hover {
@@ -152,7 +167,7 @@ body {
   font-size: 32px;
   font-weight: 600;
   line-height: 1.6;
-  color: #000000; /* text is black */
+  color: #000;
 }
 
 .home-page .services-text p {
@@ -234,7 +249,7 @@ body {
   padding: 60px 40px;
   background: #ffffff;
   border-radius: 12px;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
 }
 
 .contact-section h2 {
@@ -281,6 +296,7 @@ footer {
 /* ============================= */
 
 /* Tablet */
+
 @media (max-width: 1024px) {
 
   .video-grid {
@@ -290,9 +306,11 @@ footer {
   .image-grid {
     grid-template-columns: repeat(3, 1fr);
   }
+
 }
 
 /* Mobile */
+
 @media (max-width: 768px) {
 
   .nav-container {
@@ -324,9 +342,11 @@ footer {
   .image-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
 }
 
 /* Small phones */
+
 @media (max-width: 480px) {
 
   .home-page .services-text {
@@ -336,4 +356,5 @@ footer {
   .image-grid {
     grid-template-columns: 1fr;
   }
+
 }
