@@ -1,101 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="el">
 <head>
-
-<meta charset="UTF-8">
-<title>Dendrite Creative Studio — Home</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<link rel="stylesheet" href="./style.css">
-
+  <meta charset="UTF-8">
+  <title>Dendrite Creative Studio — Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
 </head>
-
 
 <body class="home-page">
 
+  <!-- VIDEO BACKGROUND -->
+  <video class="background-video" autoplay muted loop playsinline preload="auto">
+    <source src="./image/background.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
 
-<!-- VIDEO BACKGROUND -->
+  <!-- NAVIGATION -->
+  <nav class="nav">
+    <div class="nav-container">
+      <div class="logo-wrap">
+        <a href="./index.html">
+          <img src="./image/logo.png" alt="Dendrite Creative Studio Logo">
+        </a>
+        <span class="logo-text">DENDRITE CREATIVE STUDIO</span>
+      </div>
 
-<video class="background-video" autoplay muted loop playsinline preload="auto">
-<source src="./image/background.mp4" type="video/mp4">
-Your browser does not support the video tag.
-</video>
+      <div class="nav-links">
+        <a href="./index.html">Home</a>
+        <div class="dropdown">
+          <span class="nav-label">Works</span>
+          <div class="dropdown-content">
+            <a href="./videos.html">Videos</a>
+            <a href="./images.html">Images</a>
+          </div>
+        </div>
+        <a href="./about.html">About</a>
+        <a href="./contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
 
+  <!-- MAIN CONTENT -->
+  <main class="page-content">
 
+    <section class="hero-section">
 
-<!-- NAVIGATION -->
+      <!-- HERO TEXT ABOVE SERVICES -->
+      <div class="hero-intro">
+        <h1>Dendrite</h1>
+        <h2>Creative Ideas in Motion</h2>
+      </div>
 
-<nav class="nav">
+      <!-- SERVICES LIST -->
+      <div class="services-text" id="services-text">
+        <p>Graphic Design</p>
+        <p>Music & Sound Design</p>
+        <p>Video Art | Motion Graphics</p>
+        <p>Live Stage Visuals</p>
+        <p>Web Design | Web Development</p>
+      </div>
 
-<div class="nav-container">
+    </section>
 
-<div class="logo-wrap">
-<a href="./index.html">
-<img src="./image/logo.png" alt="Dendrite Creative Studio Logo">
-</a>
-<span class="logo-text">DENDRITE CREATIVE STUDIO</span>
-</div>
+  </main>
 
+  <!-- FOOTER -->
+  <footer>
+    © 2026 Dendrite Creative Studio
+  </footer>
 
-<div class="nav-links">
-
-<a href="./index.html">Home</a>
-
-<div class="dropdown">
-<span class="nav-label">Works</span>
-
-<div class="dropdown-content">
-<a href="./videos.html">Videos</a>
-<a href="./images.html">Images</a>
-</div>
-
-</div>
-
-<a href="./about.html">About</a>
-<a href="./contact.html">Contact</a>
-
-</div>
-
-</div>
-
-</nav>
-
-
-
-<!-- MAIN CONTENT -->
-
-<main class="page-content">
-
-<section class="hero-section">
-
-<div class="services-text" id="services-text">
-
-<p>Graphic Design</p>
-<p>Music & Sound Design</p>
-<p>Video Art | Motion Graphics</p>
-<p>Live Stage Visuals</p>
-<p>Web Design | Web Development</p>
-
-</div>
-
-</section>
-
-</main>
-
-
-
-<!-- FOOTER -->
-
-<footer>
-© 2026 Dendrite Creative Studio
-</footer>
-
-
-
-<!-- JAVASCRIPT -->
-
-<script src="./main.js"></script>
+  <!-- JAVASCRIPT -->
+  <script src="./main.js"></script>
 
 </body>
 </html>
